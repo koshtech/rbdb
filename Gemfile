@@ -6,7 +6,12 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'shoulda'
+gem 'will_paginate'
+gem 'nested_layouts'
+#gem 'better-edit-in-place'
+gem 'calendar_date_select'
+#gem 'ofc'
 
 # Gems used only for assets and not required
 # in production environments by default.
