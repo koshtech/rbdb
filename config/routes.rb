@@ -1,9 +1,9 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :settings
+Rbdb::Application.routes.draw do
+  resources :settings
 
-  map.resources :environments
+  resources :environments
 
-  map.resources :databs, :as => 'databases' do |datab|
+  resources :databs, :as => 'databases' do |datab|
     datab.resources :tables do |table|
       table.resources :rows
       table.resources :searches
@@ -12,12 +12,12 @@ ActionController::Routing::Routes.draw do |map|
     datab.relations_graph '/relations/:table_id/graph.:format', :controller => 'relations',
       :action => 'graph'
     datab.resources :relations
-    datab.resources :sqls    
+    datab.resources :sqls
   end
 
- 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-  
-  map.root :controller => 'databs'
+
+  match ':controller/:action/:id'
+  match ':controller/:action/:id.:format'
+
+  root :to => 'databs#index'
 end

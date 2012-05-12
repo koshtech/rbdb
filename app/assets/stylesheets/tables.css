@@ -1,0 +1,45 @@
+.table-content thead tr {
+  background-color: #efefef;
+  color: #333333; }
+.table-content thead img {
+  text-align: right; }
+.table-content thead a img {
+  border: none; }
+.table-content td {
+  margin-right: 5px; }
+  .table-content td a img {
+    border: none !important; }
+.table-content tbody tr {
+  border-bottom: 1px solid #efefef; }
+  .table-content tbody tr:hover {
+    background-color: lightyellow !important; }
+
+.database-content {
+  text-align: left; }
+  .database-content thead th {
+    border-bottom: 1px solid #efefef; }
+  .database-content tfoot th, .database-content tfoot td {
+    border-top: 1px solid #efefef; }
+  .database-content td {
+    padding-left: 5px; }
+  .database-content img {
+    border: none; }
+
+.actions {
+  background-color: white;
+  font-weight: normal; }
+
+.relation {
+  background-color: white; }
+  .relation em {
+    background-color: #efefef;
+    display: block;
+    padding: 4px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; }
+
+.foreign_key_id {
+  color: gray;
+  font-size: 0.8em; }
+  .foreign_key_id .editor {
+    display: inline; }
