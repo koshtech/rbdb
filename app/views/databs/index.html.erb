@@ -2,14 +2,14 @@
 
 <div class="home-information create-database">
   <h2>Create a new database</h2>
-  <% form_for @datab do |f| %>
+  <%= form_for databases_path(@datab) do |f| %>
     <div class="field">
     	<%= f.label :name, 'Name' %>
     	<%= f.text_field :name %>
     </div>
     <div class="field">
       <%= f.label :collation, 'Collation' %>
-      <%= select_tag 'datab[collation]', option_groups_from_collection_for_select(Datab::Collations, "values or []", "title", "value", "title"), :id => 'datab_collation' %>
+      <%#= select_tag 'datab[collation]', option_groups_from_collection_for_select(Datab::Collations, "values or []", "title", "value", "title"), :id => 'datab_collation' %>
       <%= f.submit 'Create' %>
     </div>
   <% end %>
@@ -39,11 +39,11 @@
     <th>Name</th>
     <th>Tables</th>
   </tr>
-<% for datab in @databs %>
+<% @databs.each do |datab| %>
   <tr>
-	  <td><%= link_to image_tag('delete.png', :title => 'destroy this database'), datab_path(datab), :method => :delete, :confirm => 'Are you sure you want delete this database?' %></td>
-	  <td><%= link_to datab.name, datab %></td>
-	  <td><%= datab.tables.size %></td>
+	  <td><%#= link_to image_tag('delete.png', :title => 'destroy this database'), datab_path(datab), :method => :delete, :confirm => 'Are you sure you want delete this database?' %></td>
+	  <td><%= link_to datab.name, database_path(datab) %></td>
+	  <td><%#= datab.tables.size %></td>
   </tr>
 <% end %>
 </table>

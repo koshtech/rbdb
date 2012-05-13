@@ -1,5 +1,5 @@
 <div class="header">
-	<h1 class="title"><%= link_to "<i>rb</i>DB", databs_path %></h1>
+	<h1 class="title"><%= link_to "<i>rb</i>DB", databases_path %></h1>
 
 	<div class="db-selection">
 		
@@ -12,7 +12,7 @@
 		
 		<script type="text/javascript" charset="utf-8">
 			function onchange_database(url) { 
-					window.location = (url == "") ? '<%= databs_path %>' : url
+					window.location = (url == "") ? '<%= databases_path %>' : url
 			}
 		</script>
 		   my databases: 
@@ -30,7 +30,7 @@
 				    <% current_prefix = prefix %>
 				  <% end %>
 				  <% selected = (@datab and @datab.name == db.name) %>
-					<option value="<%= datab_url(db.id) %>"<%= 'selected="selected"' if selected %>>
+					<option value="<%#= datab_url(db.id) %>"<%= 'selected="selected"' if selected %>>
 					  <%= suffix %>
 					</option>
 				<% end %>
@@ -39,29 +39,29 @@
 
 	<ul class="menu">
 	  <%= menu = [
-          { :title => 'Databases', :path => databs_path },
+          { :title => 'Databases', :path => databases_path },
           {
             :title => 'Tables',
-            :path => datab_path(@datab),
+            :path => @datab,
             :if => (@datab and !@datab.new_record?)
           },
           {
             :title => 'SQL Query',
-            :path => new_datab_sql_path(@datab),
+            :path => '',
             :if => (@datab and !@datab.new_record?)
           },
           { :title => 'Import/Export', :path => nil },
           { :title => 'Report', :path => nil },
           {
             :title => 'Environment',
-            :path => environments_path,
+            :path => '',
             :if => (@datab and @datab.new_record? or request.path == environments_path)
           }
 	      ]
 	      menu.map do |entry|
 	        next if entry.has_key?(:if) and !entry[:if]
 	        active = request.path == entry[:path]
-	        v = entry[:path].nil? ? entry[:title] : link_to(entry[:title], entry[:path])
+	        v = entry[:path].nil? ? entry[:title] : link_to('entry[:title], entry[:path]')
 	        "<li#{' class="current"' if active}>#{v}</li>"
     	  end.join %>
 	</ul>

@@ -83,16 +83,16 @@ a:hover {
           color: white; }
   .layout .sidebar {
     width: 300px;
-    background: url(/images/right-bg.png) repeat-y;
+    background: url(/assets/right-bg.png) repeat-y;
     vertical-align: top;
     padding: 5px 10px; }
 
 .bottom {
-  background: #efefef url(/images/bottom-bg.png) no-repeat;
+  background: #efefef url(/assets/bottom-bg.png) no-repeat;
   height: 8px; }
 
 .corner {
-  background: #efefef url(/images/corner-bg.png) no-repeat; }
+  background: #efefef url(/assets/corner-bg.png) no-repeat; }
 
 .footer {
   color: #999999;
@@ -131,7 +131,7 @@ a:hover {
       color: #333333; }
 
 .search {
-  background: white url(/images/search.gif) no-repeat right;
+  background: white url(/assets/search.gif) no-repeat right;
   border: 1px solid #999999;
   padding: 4px; }
 

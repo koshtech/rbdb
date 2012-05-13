@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def establish_connection
     ActiveRecord::Base.establish_connection :username => session[:username],
       :password => session[:password],
-      :adapter => 'mysql',
+      :adapter => 'mysql2',
       :database => '',
       :host => session[:host],
       :port => session[:port]

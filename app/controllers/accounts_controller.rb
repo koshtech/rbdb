@@ -29,7 +29,7 @@ class AccountsController < ApplicationController
     port = config['port']
     port = nil if port.blank?
     begin
-      ActiveRecord::Base.establish_connection :adapter  => "mysql",
+      ActiveRecord::Base.establish_connection :adapter  => "mysql2",
         :host     => host,
         :username => params[:username],
         :password => params[:password],
