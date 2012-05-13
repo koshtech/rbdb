@@ -1,23 +1,19 @@
 Rbdb::Application.routes.draw do
   resources :settings
-
   resources :environments
 
-  resources :databs, :as => 'databases' do |datab|
-    datab.resources :tables do |table|
-      table.resources :rows
-      table.resources :searches
-      table.resources :graphs
+  resources :databs, :as => 'databases' do
+    resources :tables do |table|
+      resources :rows
+      resources :searches
+      resources :graphs
     end
-    datab.relations_graph '/relations/:table_id/graph.:format', :controller => 'relations',
-      :action => 'graph'
-    datab.resources :relations
-    datab.resources :sqls
+
+    resources :relations
+    resources :sqls
   end
 
-
-  match ':controller/:action/:id'
-  match ':controller/:action/:id.:format'
+  match "login" => "accounts#login"
 
   root :to => 'databs#index'
 end
