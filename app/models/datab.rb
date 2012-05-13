@@ -1,4 +1,5 @@
 class Datab < Base
+#  include Collation
 
   attr_accessor :collation
 
