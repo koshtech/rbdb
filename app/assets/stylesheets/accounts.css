@@ -1,7 +1,7 @@
 .logo {
   width: 100%;
   height: 79px;
-  background: url(/images/logo-welcome.png) no-repeat top right;
+  background: url(/assets/logo-welcome.png) no-repeat top right;
   margin-top: -39px; }
   .logo h1 {
     display: none; }
@@ -55,7 +55,7 @@ p {
   height: 240px; }
 
 .bottom-deco {
-  background: url(/images/logo.png) no-repeat right;
+  background: url(/assets/logo.png) no-repeat right;
   height: 95px;
   width: 87px;
   margin: -90px auto;
