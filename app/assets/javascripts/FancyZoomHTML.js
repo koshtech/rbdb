@@ -87,15 +87,9 @@ function insertZoomHTML() {
 	inImage2.setAttribute('border','0');
 	inImage2.style.cursor = 'pointer';		
 	inClosebox.appendChild(inImage2);
-	
-	// SHADOW
-	// Only draw the table-based shadow if the programatic webkitBoxShadow fails!
-	// Also, don't draw it if we're IE -- it wouldn't look quite right anyway.
-	
+
 	if (! document.getElementById('ZoomImage').style.webkitBoxShadow && ! browserIsIE) {
 
-		// SHADOW BASE
-		
 		var inFixedBox = document.createElement("div");
 		inFixedBox.setAttribute('id', 'ShadowBox');
 		inFixedBox.style.position = 'absolute'; 
@@ -106,17 +100,7 @@ function insertZoomHTML() {
 		inFixedBox.style.visibility = 'hidden';
 		inFixedBox.style.zIndex = '498';
 		inBody.insertBefore(inFixedBox, inZoombox.nextSibling);	
-	
-		// SHADOW
-		// Now, the shadow table. Skip if not compatible, or irrevelant with -box-shadow.
-		
-		// <div id="ShadowBox"><table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0"> X
-		//   <tr height="25">
-		//   <td width="27"><img src="/images/zoom-shadow1.png" width="27" height="25"></td>
-		//   <td background="/images/zoom-shadow2.png">&nbsp;</td>
-		//   <td width="27"><img src="/images/zoom-shadow3.png" width="27" height="25"></td>
-		//   </tr>
-		
+
 		var inShadowTable = document.createElement("table");
 		inShadowTable.setAttribute('border', '0');
 		inShadowTable.setAttribute('width', '100%');
@@ -162,13 +146,7 @@ function insertZoomHTML() {
 		inShadowImg3.setAttribute('height', '25');
 		inShadowImg3.style.display = 'block';
 		inCol3.appendChild(inShadowImg3);
-		
-		//   <tr>
-		//   <td background="/images/zoom-shadow4.png">&nbsp;</td>
-		//   <td bgcolor="#ffffff">&nbsp;</td>
-		//   <td background="/images/zoom-shadow5.png">&nbsp;</td>
-		//   </tr>
-		
+
 		inRow2 = document.createElement("tr");
 		inShadowTbody.appendChild(inRow2);
 		
@@ -204,14 +182,7 @@ function insertZoomHTML() {
 		inSpacer4.setAttribute('width', '1');
 		inSpacer4.style.display = 'block';
 		inCol6.appendChild(inSpacer4);
-		
-		//   <tr height="26">
-		//   <td width="27"><img src="/images/zoom-shadow6.png" width="27" height="26"</td>
-		//   <td background="/images/zoom-shadow7.png">&nbsp;</td>
-		//   <td width="27"><img src="/images/zoom-shadow8.png" width="27" height="26"></td>
-		//   </tr>  
-		// </table>
-		
+
 		var inRow3 = document.createElement("tr");
 		inRow3.style.height = '26px';
 		inShadowTbody.appendChild(inRow3);
@@ -249,19 +220,7 @@ function insertZoomHTML() {
 	}
 
 	if (includeCaption) {
-	
-		// CAPTION
-		//
-		// <div id="ZoomCapDiv" style="margin-left: 13px; margin-right: 13px;">
-		// <table border="1" cellpadding="0" cellspacing="0">
-		// <tr height="26">
-		// <td><img src="zoom-caption-l.png" width="13" height="26"></td>
-		// <td rowspan="3" background="zoom-caption-fill.png"><div id="ZoomCaption"></div></td>
-		// <td><img src="zoom-caption-r.png" width="13" height="26"></td>
-		// </tr>
-		// </table>
-		// </div>
-		
+
 		var inCapDiv = document.createElement("div");
 		inCapDiv.setAttribute('id', 'ZoomCapDiv');
 		inCapDiv.style.position = 'absolute'; 		
