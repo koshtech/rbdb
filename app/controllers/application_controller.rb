@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     return true if logged_in?
     session[:return_to] = request.url
     flash[:error] = 'Please give your credentials'
-    redirect_to :controller => '/accounts', :action => :login
+    redirect_to login_path
   end
 
   def establish_connection
