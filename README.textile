@@ -7,6 +7,9 @@ rbDB is a web-based mysql database administration bringing conventions to databa
 This is a Rails 3.2.2 under Ruby 1.9.3 port from "@koshtech":http://github.com/KoshTech and "@rubyonrio":http://github.com/rubyonrio teams.
 It is not functional yet.
 
+This is a Rails 3.2.2 under Ruby 1.9.3 port from "@koshtech":http://github.com/KoshTech and "@rubyonrio":http://github.com/rubyonrio teams.
+It is not functional yet.
+
 
 h2. Why this project ?
 
