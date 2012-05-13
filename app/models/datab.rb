@@ -1,6 +1,5 @@
 class Datab < Base
-  include Collation
-  
+
   attr_accessor :collation
 
   @@databs = {}
@@ -15,7 +14,7 @@ class Datab < Base
     end
     connection.create_database attributes[:name], options
   end
-  
+
   def self.destroy! name
     execute "drop database #{sanitize_table name}"
     @@databs.delete name
@@ -32,7 +31,7 @@ class Datab < Base
   def self.all
     databs.values.sort_by &:name
   end
-  
+
   def self.find name
     databs[name.to_s]
   end
@@ -52,5 +51,5 @@ class Datab < Base
     end
     @tables
   end
-  
+
 end

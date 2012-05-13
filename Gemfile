@@ -1,22 +1,20 @@
-source :gemcutter
-gem "rails", "2.1.1"
-gem "rack", "1.0.1"
-gem "haml", '3.1.3'
-gem "mysql", '2.8.1'
-gem "unicorn", "1.1.2"
-# gem "sqlite3-ruby", :require => "sqlite3"
+source 'https://rubygems.org'
 
-# bundler requires these gems in all environments
-# gem "nokogiri", "1.4.2"
-# gem "geokit"
+gem 'jquery-rails'
+gem 'rails', '3.2.2'
+gem 'mysql2'
+gem 'will_paginate'
+gem 'nested_layouts'
+#gem 'better-edit-in-place'
+gem 'calendar_date_select'
 
-group :development do
-  # bundler requires these gems in development
-  # gem "rails-footnotes"
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 group :test do
-  # bundler requires these gems while running tests
-  # gem "rspec"
-  # gem "faker"
+  gem 'rspec-rails'
+  gem 'shoulda'
 end
