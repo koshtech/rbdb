@@ -4,7 +4,7 @@ h2. Description
 
 rbDB is a web-based mysql database administration bringing conventions to database administration.
 
-This is a Rails 3.2.2 under Ruby 1.9.3 port from "@koshtech":http://github.com/KoshTech and "@rubyonrio":http://github.com/rubyonrio teams.
+This is a Rails 3.2.2 under Ruby 1.9.3 port from "@koshtech":http://github.com/KoshTech and "@rubyonrio":http://github.com/rubyonrio teams. It was started on @startonrails events. For more informations about @startonrails, please read http://koshtech.com/en/posts/7-startonrails.
 It is not functional yet.
 
 
@@ -34,6 +34,8 @@ If you made a pull request, please add your info at last of above list:
 "Vagner Zampieri":http://github.com/vagnerzampieri
 "Rafael B. Tauil":http://github.com/tauil
 "Luciano Sousa":http://github.com/lucianosousa
+"pichotweb":http://github.com/pichotweb
+"vivocah":http://github.com/vivocah
 
 
 h2. Official website and old Rails 2 branch
