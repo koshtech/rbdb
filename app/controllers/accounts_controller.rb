@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  
+
   skip_before_filter :authenticate, :only => [:login, :index]
   skip_before_filter :fill_last_queries
   skip_before_filter :fill_system_stats
@@ -9,17 +9,17 @@ class AccountsController < ApplicationController
     if request.post?
       if do_login
         redirect_to session[:return_to] || databs_path
-       end
+      end
     end
   end
-  
+
   def logout
     reset_session
     flash[:error] = 'You were logged out'
     redirect_to :action => 'login'
   end
-  
-  
+
+
   private
   def do_login
     config = YAML.load_file(File.join(Rails.root, 'config', 'database.yml'))[Rails.env]
@@ -46,5 +46,5 @@ class AccountsController < ApplicationController
     session[:port] = port
     return true
   end
-  
+
 end
