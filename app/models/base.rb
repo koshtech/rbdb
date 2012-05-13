@@ -1,10 +1,18 @@
 class Base
-  
+  include ActiveModel::Validations
+  include ActiveModel::Serialization
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+
   attr_reader :name
   attr_writer :new_record
   
-  def initialize name = nil
+  def initialize(name = nil)
     @name = name
+  end
+
+  def persisted?
+    false
   end
   
   def to_param

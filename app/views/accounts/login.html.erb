@@ -1,4 +1,4 @@
-<% if flash[:error]%>
+<% if flash[:error] %>
 	<p class="error"><%= flash[:error] %></p>
 <% end %>
 <div class="welcome">
@@ -8,24 +8,28 @@
 	<%= link_to 'our bug tracker', 'http://rbdb.lighthouseapp.com' %>
 	</p>
 </div>
-	<div class="form">
-	<% unless session[:authenticated] %>
-		<% form_tag do -%>
-		<p><label for="username">login</label></p>
-		<%= text_field_tag 'username', nil%>
-		<p><label for="password">password</label></p>
-		<%= password_field_tag 'password', nil%>
-		<p><label for="host">host</label></p>
-		<%= text_field_tag 'host', 'localhost'%>
-		<p><%= submit_tag 'Connexion', :class => 'submit' %></p>
-		<script type="text/javascript">
-		//<![CDATA[
+
+<div class="form">
+<% unless session[:authenticated] %>
+	<%= form_tag do %>
+
+	<p><label for="username">login</label></p>
+	<%= text_field_tag 'username', nil%>
+
+	<p><label for="password">password</label></p>
+	<%= password_field_tag 'password', nil%>
+
+	<p><label for="host">host</label></p>
+	<%= text_field_tag 'host', 'localhost'%>
+
+	<p><%= submit_tag 'Connexion', :class => 'submit' %></p>
+
+	<script type="text/javascript">
 		$("username").focus()
-		//]]>
-		</script>
-		<% end %>                
-	 <% else %>
-	You are already connected as <%= session[:username] %>, you must first <%= link_to 'logout', :action => 'logout' %> to change your credentials.<br/>
-	Or jump to the <%= link_to 'database list', :controller => '/databs' %>
-	<% end %>
-	</div>
+	</script>
+	<% end %>                
+ <% else %>
+You are already connected as <%= session[:username] %>, you must first <%= link_to 'logout', :action => 'logout' %> to change your credentials.<br/>
+Or jump to the <%= link_to 'database list', :controller => '/databs' %>
+<% end %>
+</div>
