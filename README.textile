@@ -2,7 +2,7 @@ h1. rbDB
 
 h2. Description
 
-rbDB is a web-based mysql database administration bringing conventions to database administration
+rbDB is a web-based mysql database administration bringing conventions to database administration.
 
 This is a Rails 3.2.2 under Ruby 1.9.3 port from "@koshtech":http://github.com/KoshTech and "@rubyonrio":http://github.com/rubyonrio teams.
 It is not functional yet.
@@ -36,7 +36,7 @@ If you made a pull request, please add your info at last of above list:
 "Luciano Sousa":http://github.com/lucianosousa
 
 
-h2. Official website and Rails 2 branch
+h2. Official website and old Rails 2 branch
 
 /!\ Warning /!\ This is an alpha released of our Railsrumble 48hr-project ("Rails rumble 2008":http://railsrumble.com). You should NOT use rbDB in production yet. We'll develop missing features in the next days/weeks.
 
