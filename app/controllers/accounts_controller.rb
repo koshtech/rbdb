@@ -22,12 +22,9 @@ class AccountsController < ApplicationController
 
   private
   def do_login
-    config = YAML.load_file(File.join(Rails.root, 'config', 'database.yml'))[Rails.env]
-    host = config['host'] # overwrite user specified
     host = params[:host] if host.blank?
     host = 'localhost' if host.blank?
-    port = config['port']
-    port = nil if port.blank?
+    port = 3306 if port.blank?
     begin
       ActiveRecord::Base.establish_connection :adapter  => "mysql2",
         :host     => host,
