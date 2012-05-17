@@ -9,7 +9,7 @@
     </div>
     <div class="field">
       <%= f.label :collation, 'Collation' %>
-      <%#= select_tag 'datab[collation]', option_groups_from_collection_for_select(Datab::Collations, "values or []", "title", "value", "title"), :id => 'datab_collation' %>
+      <%#= select_tag 'database[collation]', option_groups_from_collection_for_select(Database::Collations, "values or []", "title", "value", "title"), :id => 'database_collation' %>
       <%= f.submit 'Create' %>
     </div>
   <% end %>

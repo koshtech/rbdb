@@ -19,7 +19,7 @@
 		   <select onchange="onchange_database(this.value)" class="database-selector" accesskey="d" title="Access key: d">
 				<option value=""></option>
 				<% current_prefix = nil %>
-				<% Datab.all.each do |db| %>
+				<% Database.all.each do |db| %>
 				  <% s = db.name.split('_') %>
 				  <% prefix, suffix = s.size < 2 ? [nil, db.name] : [s[0..-2].join('_'), s.last] %>
 				  <% if current_prefix != prefix %>

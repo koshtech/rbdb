@@ -1,20 +1,20 @@
-class DatabsController < ApplicationController
+class DatabasesController < ApplicationController
 
   def index
-    @databs = Datab.all
-    @datab = Datab.new
+    @databs = Database.all
+    @datab = Database.new
   end
 
   def show
-    @datab = Datab.find params[:id]
+    @datab = Database.find params[:id]
   end
 
   def edit
-    @datab = Datab.find params[:id]
+    @datab = Database.find params[:id]
   end
 
   def create
-    Datab.create! params[:datab]
+    Database.create! params[:datab]
     flash[:notice] = "Database #{params[:datab][:name]} was successfully created."
   rescue StandardError => e
     flash[:notice] = e.to_s
@@ -23,7 +23,7 @@ class DatabsController < ApplicationController
   end
 
   def destroy
-    Datab.destroy! params[:id]
+    Database.destroy! params[:id]
     flash[:notice] = "Database #{params[:id]} was successfully deleted."
   rescue StandardError => e
     flash[:notice] = e.to_s

@@ -1,5 +1,5 @@
-module DatabsHelper
-  
+module DatabasesHelper
+
   def table_icon table
     icon = if table.view?
       'view'
@@ -8,5 +8,5 @@ module DatabsHelper
     end
     image_tag "#{icon}.png"
   end
-  
+
 end

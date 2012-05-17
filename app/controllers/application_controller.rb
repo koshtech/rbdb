@@ -33,8 +33,8 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => '/databs', :action => :index
       return false
     end
-    @datab = Datab.find(params[:database_id])
-    Datab.execute "use #{@datab.name}"
+    @datab = Database.find(params[:database_id])
+    Database.execute "use #{@datab.name}"
   end
 
   def select_table

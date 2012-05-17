@@ -2,7 +2,7 @@ Rbdb::Application.routes.draw do
   resources :settings
   resources :environments
 
-  resources :databs, :as => 'databases' do
+  resources :databases do
     resources :tables do |table|
       resources :rows
       resources :searches
@@ -15,5 +15,5 @@ Rbdb::Application.routes.draw do
 
   match "login" => "accounts#login"
 
-  root :to => 'databs#index'
+  root :to => 'databases#index'
 end

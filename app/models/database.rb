@@ -1,4 +1,4 @@
-class Datab < Base
+class Database < Base
 #  include Collation
 
   attr_accessor :collation
@@ -10,7 +10,7 @@ class Datab < Base
     if !attributes[:collation].blank?
       options[:collation] = attributes[:collation]
       options[:charset] = Collations.detect do |group|
-        group.values.detect { |col| col.value == attributes[:collation] } 
+        group.values.detect { |col| col.value == attributes[:collation] }
       end.label
     end
     connection.create_database attributes[:name], options
