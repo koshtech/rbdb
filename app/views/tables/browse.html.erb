@@ -20,7 +20,7 @@
 			</select>
 	  		<script type="text/javascript" charset="utf-8">
 				function onchange_show_rows(per_page) { 
-						window.location = '<%= datab_table_path(@datab, @table) %>?per_page=' + per_page
+						window.location = '<%= database_table_path(@datab, @table) %>?per_page=' + per_page
 				}
 			</script>
 <% end %>

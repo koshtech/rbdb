@@ -16,7 +16,7 @@
   }
 </script>
 
-<% form_for @row, :url => datab_table_row_path(@datab, @table, @row) do |form| %>
+<% form_for @row, :url => database_table_row_path(@datab, @table, @row) do |form| %>
   <% fields_for 'row', @row do |f| %>
     <%= f.error_messages %>
   

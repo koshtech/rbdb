@@ -10,7 +10,7 @@ when ForeignKey %>
     <span class='foreign_key_id'>
       #<%= editable_field row, column, string(row[column.name].to_s) %>
     </span>
-	<%= link_to most_likely_name(r), datab_table_row_path(column.dest.db, column.dest, r.id) %>
+	<%= link_to most_likely_name(r), database_table_row_path(column.dest.db, column.dest, r.id) %>
   <% else %>
     <% row[column.name] %>
   <% end %>

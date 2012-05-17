@@ -6,8 +6,8 @@
 	#//TODO
 	#Should be an Ajax Call
 	%>
-     <%= link_to (@evolution) ? "switch to the day-to-day graph" : "switch to the evolution graph", datab_table_graphs_path(@table.db, @table, :evolution => !@evolution) %>
-	 <%= OpenFlashChart.swf_object 900, 200, datab_table_graph_path(@table.db, @table, 'created_at', :type => "line", :title => '', :evolution => @evolution) %>
+     <%= link_to (@evolution) ? "switch to the day-to-day graph" : "switch to the evolution graph", database_table_graphs_path(@table.db, @table, :evolution => !@evolution) %>
+	 <%= OpenFlashChart.swf_object 900, 200, database_table_graph_path(@table.db, @table, 'created_at', :type => "line", :title => '', :evolution => @evolution) %>
 <% end %>
 <br/>
 <% if created_at_chart || !@columns.empty? %>

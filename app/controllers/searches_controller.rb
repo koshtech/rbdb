@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_filter :select_db
   before_filter :select_table
   before_filter :remove_blank_fields, :only => [:create, :update]
-  
+
   def show
     @conditions = session[:searches][params[:id].to_i][:conditions]
 
@@ -37,7 +37,7 @@ class SearchesController < ApplicationController
         :modifiers => @search.modifiers
       }
       flash[:notice] = 'Search was successfully created.'
-      redirect_to datab_table_search_path(@datab, @table, @search)
+      redirect_to database_table_search_path(@datab, @table, @search)
     else
       render :action => "new"
     end
@@ -53,7 +53,7 @@ class SearchesController < ApplicationController
       render :action => "edit"
     end
   end
-  
+
   private
   def remove_blank_fields
     params[:search].each do |k,v|
