@@ -1,6 +1,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
+  def parent_layout(layout)
+    @view_flow.set(:layout,output_buffer)
+    self.output_buffer = render(:file => "layouts/#{layout}")
+  end
+
   def date_ago(d)
     s = d.to_s(:db) rescue d.to_s
     content_tag 'span', :title => s do
@@ -15,32 +19,32 @@ module ApplicationHelper
       end
     end
   end
-  
+
   def yes_no(d)
     d == true ? 'Yes' : 'No'
   end
-  
+
   def analyze_value value
     if value =~ /(^([^@\s]+)@((?:[-_a-z0-9]+\.)+[a-z]{2,})$)/i
       return link_to(image_tag("email_go.png"), "mailto:#{value}",
-        :title => "send an email to #{value}")
+                     :title => "send an email to #{value}")
     end
     if value =~ /^(http:\/\/)|(www\.).*/
       return link_to(image_tag('link_go.png', :style => 'display:inline'), value,
-        :title => "visit #{value}", :target => '_blank')
+                     :title => "visit #{value}", :target => '_blank')
     end
     return nil
   end
 
   def string value
     options = {:title => value}
-    options[:class] = 'null' if value.blank?  
+    options[:class] = 'null' if value.blank?
     content_tag :span, options do
       (value.blank?) ? (value.nil?) ? 'NULL' : 'EMPTY' : truncate(value, 20)
     end
-    
+
   end
-  
+
   def error_messages_for(*params)
     options = params.extract_options!.symbolize_keys
     if object = options.delete(:object)
@@ -81,5 +85,5 @@ module ApplicationHelper
   def logged_in?
     session[:username]
   end
-  
+
 end

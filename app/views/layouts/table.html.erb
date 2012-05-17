@@ -1,4 +1,3 @@
-<% inside_layout 'database' do %>
-  <%= render :partial => "/tables/submenu" %>
-  <%= yield %>
-<% end %>
+<%= render :partial => "/tables/submenu" %>
+<%= yield %>
+<% parent_layout 'database' %>

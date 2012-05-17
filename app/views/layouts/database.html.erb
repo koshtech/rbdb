@@ -1,4 +1,3 @@
-<% inside_layout 'application' do %>
-  <%= render :partial => '/tables/navigator' %>  
-  <%= yield %>
-<% end %>
+<%= render :partial => '/tables/navigator' %>  
+<%= yield %>
+<% parent_layout 'application' %>
