@@ -7,14 +7,14 @@ class Table < Base
     super name
     @db = db
     req = Base.execute("SHOW TABLE STATUS FROM #{sanitize_table db.name} WHERE name='#{name}'")
-    columns = req.fetch_fields.map { |f| f.name }
+    columns = req.fields
     @table_status = {}
     req.each do |v|
       columns.each_with_index do |c,i|
         @table_status[c.to_s.downcase] = v[i]
       end
     end
-    @errors = ActiveRecord::Errors.new(self)
+    @errors = ActiveModel::Errors.new(self)
   end
 
   def self.create(params, db)
