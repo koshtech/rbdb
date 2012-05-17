@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  include SessionSizedList
+
   before_filter :authenticate
   before_filter :establish_connection
   before_filter :fill_last_queries
