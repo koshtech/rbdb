@@ -28,12 +28,12 @@ class ApplicationController < ActionController::Base
   end
 
   def select_db
-    if params[:datab_id].blank?
+    if params[:database_id].blank?
       flash[:notice] = 'You must select a database!'
       redirect_to :controller => '/databs', :action => :index
       return false
     end
-    @datab = Datab.find(params[:datab_id])
+    @datab = Datab.find(params[:database_id])
     Datab.execute "use #{@datab.name}"
   end
 
