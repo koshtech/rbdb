@@ -21,7 +21,7 @@
   <% for table in @datab.tables %>
   <tr>
   	<td><%= table_icon table %></td>
-  	<td><%= link_to table.name, databases_table_path(@datab, table) %></td>
+  	<td><%= link_to table.name, database_table_path(@datab, table) %></td>
   	<td class="int" sorttable_customkey="<%= table.rows %>"><%= number_with_delimiter table.rows %></td>
   	<td class="int" sorttable_customkey="<%= table.data_length.to_i %>"><%= number_to_human_size table.data_length.to_i %></td>
   	<td><%= table.engine %></td>

@@ -4,7 +4,7 @@
     <ul>
       <% lasts.reverse_each do |last| %>
         <li>
-          <%= link_to last[:name] + '', datab_table_path(last[:db], last[:name]) %>
+          <%= link_to last[:name] + '', database_table_path(last[:db], last[:name]) %>
           <span class="infos">« <%= last[:db] %></span>
         </li>
       <% end %>

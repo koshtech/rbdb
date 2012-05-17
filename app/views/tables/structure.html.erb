@@ -22,7 +22,7 @@
 				end
 				%>
 				<% if column.is_a? ForeignKey %>
-					<%= link_to column.name, datab_table_path(column.dest.db, column.dest) %>
+					<%= link_to column.name, database_table_path(column.dest.db, column.dest) %>
 				<% else %>
 					<%= column.name %>
 				<% end %>
@@ -36,14 +36,14 @@
 	</tbody>
 </table>
 <div class="edit_table">
-  <%= link_to 'Edit', edit_datab_table_path(@datab, @table) %>
+  <%= link_to 'Edit', edit_database_table_path(@datab, @table) %>
 </div>
 
 <% if @relations.size > 0 %>
   <h3>Associations</h3>
   <ul class="associations">
    <% @relations.each do |relation| %>
-    <li>» <%= link_to relation, datab_table_path(@datab, relation) %></li>
+    <li>» <%= link_to relation, database_table_path(@datab, relation) %></li>
    <% end %>
   </ul>
 <% end %>

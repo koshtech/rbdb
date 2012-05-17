@@ -1,25 +1,25 @@
 <% content_for :submenu do %>
   <% links = [
-      {:text => 'Structure', :path => datab_table_path(@datab, @table, :mode => 'structure'),
+      {:text => 'Structure', :path => database_table_path(@datab, @table, :mode => 'structure'),
         :session_key => :mode, :session_value => 'structure'},
-      {:text => 'Content', :path => datab_table_path(@datab, @table, :mode => 'browse'),
+      {:text => 'Content', :path => database_table_path(@datab, @table, :mode => 'browse'),
         :session_key => :mode, :session_value => 'browse'},
-      {:text => 'Insert', :path => new_datab_table_row_path(@datab, @table)},
-      {:text => 'Search', :path => new_datab_table_search_path(@datab, @table),
+      {:text => 'Insert', :path => new_database_table_row_path(@datab, @table)},
+      {:text => 'Search', :path => new_database_table_search_path(@datab, @table),
         :force => (controller.controller_name == 'searches')},
-      {:text => 'Reports', :path => datab_table_graphs_path(@datab, @table)},
-      {:text => 'Relations', :path => datab_relation_path(@datab, @table)},
+      {:text => 'Reports', :path => database_table_graphs_path(@datab, @table)},
+      {:text => 'Relations', :path => database_relation_path(@datab, @table)},
     ] %>
   
   <% if controller.controller_name == 'rows' and controller.action_name == 'show' %>
-    <% links.insert 1, {:text => 'Rows', :path => datab_table_rows_path(@datab, @table),
+    <% links.insert 1, {:text => 'Rows', :path => database_table_rows_path(@datab, @table),
         :force => true} %>
   <% end %>
     
   <% exact_match = links.detect { |link| (request.path == link[:path]) or link[:force] } %>
   <% session_match = links.detect { |link| link[:session_key] and session[link[:session_key]] == link[:session_value] } %>
   <% links.each do |link| %>
-    <% if (request.request_uri == link[:path]) or link[:force] or
+    <% if (request.url == link[:path]) or link[:force] or
           (!exact_match and link[:session_key] and session[link[:session_key]] == link[:session_value]) %>
     <li class="current"><%= link[:text] %></li>
     <% else %>
