@@ -20,3 +20,4 @@
 # Vim swapfiles
 *.swp
 .rspec
+.rvmrc
