@@ -1,5 +1,0 @@
-<% @title = "Edit #{@row.class.to_s.split('::').last} id = #{params[:id]}" %>
-
-<%= render :partial => "/rows/form", :locals => {:button_text => "Edit"} %>
-
-<%= link_to 'Back', database_table_path(@datab, @table) %>
